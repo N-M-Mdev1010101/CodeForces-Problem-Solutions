@@ -11,21 +11,21 @@ void winner(vector<string> &winners) {
 			tic_tac_toe_board[i][j] = line[j];
 		}
 	}
-	if (tic_tac_toe_board[0][0] == tic_tac_toe_board[1][0] && tic_tac_toe_board[1][0] == tic_tac_toe_board[2][0]) {
+	if (tic_tac_toe_board[0][0] == tic_tac_toe_board[1][0] && tic_tac_toe_board[1][0] == tic_tac_toe_board[2][0] && tic_tac_toe_board[0][0] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[0][0]));
-	} else if (tic_tac_toe_board[0][1] == tic_tac_toe_board [1][1] && tic_tac_toe_board [1][1] == tic_tac_toe_board[2][1]) {
+	} else if (tic_tac_toe_board[0][1] == tic_tac_toe_board [1][1] && tic_tac_toe_board [1][1] == tic_tac_toe_board[2][1] && tic_tac_toe_board[0][1] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[1][1]));
-	} else if (tic_tac_toe_board[0][2] == tic_tac_toe_board [1][2] && tic_tac_toe_board [1][2] == tic_tac_toe_board[2][2]) {
+	} else if (tic_tac_toe_board[0][2] == tic_tac_toe_board [1][2] && tic_tac_toe_board [1][2] == tic_tac_toe_board[2][2] && tic_tac_toe_board[0][2] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[2][2]));
-	} else if (tic_tac_toe_board[0][0] == tic_tac_toe_board[0][1] && tic_tac_toe_board[0][1] == tic_tac_toe_board[0][2]) {
+	} else if (tic_tac_toe_board[0][0] == tic_tac_toe_board[0][1] && tic_tac_toe_board[0][1] == tic_tac_toe_board[0][2] && tic_tac_toe_board[0][0] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[0][2]));
-	} else if (tic_tac_toe_board[1][0] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1] == tic_tac_toe_board[1][2]) {
+	} else if (tic_tac_toe_board[1][0] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1] == tic_tac_toe_board[1][2] && tic_tac_toe_board[1][0] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[1][2]));
-	} else if (tic_tac_toe_board[2][0] == tic_tac_toe_board[2][1] && tic_tac_toe_board[2][1] == tic_tac_toe_board[2][2]) {
+	} else if (tic_tac_toe_board[2][0] == tic_tac_toe_board[2][1] && tic_tac_toe_board[2][1] == tic_tac_toe_board[2][2] && tic_tac_toe_board[2][0] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[2][2]));
-	} else if (tic_tac_toe_board[0][0] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1] == tic_tac_toe_board[2][2]) {
+	} else if (tic_tac_toe_board[0][0] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1] == tic_tac_toe_board[2][2] && tic_tac_toe_board[0][0] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[2][2]));
-	} else if (tic_tac_toe_board[0][2] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1]== tic_tac_toe_board[2][0]) {
+	} else if (tic_tac_toe_board[0][2] == tic_tac_toe_board[1][1] && tic_tac_toe_board[1][1]== tic_tac_toe_board[2][0] && tic_tac_toe_board[0][2] != '.') {
 		winners.push_back(string(1, tic_tac_toe_board[2][0]));
 	} else {
 		winners.push_back("DRAW");
@@ -38,11 +38,7 @@ int main() {
 	vector<string> winners;
 	for (int i = 0; i < t; i++) winner(winners);
 	for (int i = 0; i < winners.size(); i++) {
-		if (winners[i] != "."){ 
 		cout << winners[i] << "\n";
-		} else {
-			cout << "DRAW" << "\n";
-		}
 	}
 	return 0;
 }
